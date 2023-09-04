@@ -1,0 +1,26 @@
+﻿@page
+@using System.Data.SqlClient;
+@using WebVeriAlma.Classes
+@{
+     Layout = "/Pages/Shared/_LayoutAdmin.cshtml";
+    try
+    {
+        String id = Request.Query["id"];
+        cGenel connect = new cGenel();
+        using(SqlConnection connection = new SqlConnection(connect.conString))
+        {
+            connection.Open();
+            String sql = "DELETE FROM users WHERE id=@id";
+            using(SqlCommand cmd = new SqlCommand(sql, connection))
+            {
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+            }
+        }
+    }
+    catch(Exception ex)
+    {
+        
+    }
+    Response.Redirect("/Users/Kullanicilar");
+}

@@ -1,0 +1,42 @@
+﻿@page
+@model WebVeriAlma.Pages.Users.KullanicilarModel
+@{
+    Layout = "/Pages/Shared/_LayoutAdmin.cshtml";
+}
+<br />
+<h3>Kullanıcı Listesi</h3>
+<a class='btn btn-primary btn-sm' href="/Users/Olustur">Yeni Kullanıcı</a>
+<table class="table">
+    <thead>
+        <tr>
+            @*  <th>ID</th>*@
+            <th>İsim-Soyisim</th>
+            <th>Email</th>
+            <th>Kullanıcı Adı</th>
+                  @*  <th>Şifre</th>*@
+
+            <th>Oluşturulma Tarihi </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListUsers)
+        {
+            <tr>
+                @*     <td>@item.id</td>*@
+                <td>@item.nameSurname</td>
+                <td>@item.email</td>
+                <td>@item.username</td>
+             @*   <td>@item.password</td>*@
+
+                <td>@item.created_at</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Users/Duzenle?id=@item.id">DÜZENLE</a>
+                    <a class="btn btn-danger btn-sm" href="/Users/Sil?id=@item.id">SİL</a>
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

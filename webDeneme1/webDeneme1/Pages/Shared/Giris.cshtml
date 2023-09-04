@@ -1,0 +1,56 @@
+﻿@page
+@model WebVeriAlma.Pages.Shared.GirisModel
+@{
+}
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="center">
+        <h3>GİRİŞ</h3>
+        <form method="post">
+
+
+            <div class="txt_field">
+                <input type="text" class="form-control" name="username" value="@Model.userInfo.username" required>
+                <label>Kullanıcı Adı</label>
+            </div>
+
+            <div class="txt_field">
+                <input type="password" class="form-control" name="password" value="@Model.userInfo.password" required>
+                <label> Şifre</label>
+            </div>
+
+        @*    <div class="pass">Forgot Password?</div>
+*@
+            <input type="submit" value="GİRİŞ">
+
+            @if (Model.successMessage.Length > 0)
+            {
+
+                <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                    <strong>@Model.successMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                </div>
+
+            }
+            @if (Model.errorMessage.Length > 0)
+            {
+                <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                    <strong>@Model.errorMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                </div>
+            }
+
+           
+        </form>
+    </div>
+
+</body>
+</html>
+

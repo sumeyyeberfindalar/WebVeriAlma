@@ -1,0 +1,69 @@
+﻿@page
+@model WebVeriAlma.Pages.Users.DuzenleModel
+@{
+     Layout = "/Pages/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+@*@if (Model.errorMessage.Length > 0)
+    {
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+    <strong>@Model.errorMessage</strong>
+    <button type ='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+    }*@
+
+<div class="center">
+<h3> Kullanıcıyı Düzenle</h3>
+    <form method="POST">
+
+        <input type="hidden" name="id" value="@Model.userInfo.id" />
+
+        <div class="txt_field">
+
+            <input type="text" class="form-control" name="nameSurname" value="@Model.userInfo.nameSurname" required>
+            <label>İsim-Soyisim</label>
+
+        </div>
+
+        <div class="txt_field">
+
+            <input type="text" class="form-control" name="email" value="@Model.userInfo.email" required>
+            <label>Email</label>
+
+        </div>
+
+        <div class="txt_field">
+
+            <input type="text" class="form-control" name="username" value="@Model.userInfo.username" required>
+            <label>Kullanıcı Adı</label>
+
+        </div>
+
+
+
+            <input type="hidden"  name="password" value="@Model.userInfo.password" >
+  
+
+            <div class="signup_link">
+          <a href="/Users/SifreDegistirme?id=@Model.userInfo.id">Şifrenizi değiştirmek için tıklayınız. </a>
+        </div>
+
+
+
+
+
+
+        <div class="row mb-3">
+            <div class="offset-sm-3 col-sm-3 d-grid">
+
+                <button type="submit" class="btn btn-primary">Tamam</button>
+            </div>
+
+            <div class="col-sm-3 d-grid">
+                <a class="btn btn-outline-primary" href="/Users/Kullanicilar" role="button">Kapat</a>
+            </div>
+        </div>
+    </form>
+</div>

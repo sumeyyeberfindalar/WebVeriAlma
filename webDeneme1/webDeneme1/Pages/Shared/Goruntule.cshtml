@@ -1,0 +1,35 @@
+﻿@page
+@model WebVeriAlma.Pages.Shared.GoruntuleModel
+@{
+     Layout = "/Pages/Shared/_LayoutAdmin.cshtml";
+}
+<br />
+<h3>Veri Listesi</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>İSİM</th>
+            <th>VERİ</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.ListURL)
+        {
+        <tr>
+           <td>@item.id</td>
+           <td>@item.name</td>
+           <td>@item.htmlVeri</td>
+     
+           <td>
+               <a class="btn btn-primary btn-sm" href="/Shared/DuzenleGoruntule?id=@item.id">DÜZENLE</a>
+               <a class="btn btn-danger btn-sm" href="/Shared/SilGoruntule?id=@item.id">SİL</a>
+
+           </td>
+
+        </tr>
+        }
+    </tbody>
+</table>

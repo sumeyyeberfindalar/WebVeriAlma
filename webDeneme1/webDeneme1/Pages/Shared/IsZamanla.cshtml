@@ -1,0 +1,61 @@
+﻿@page
+@model WebVeriAlma.Pages.Shared.IsZamanlaModel
+@{
+    Layout = "/Pages/Shared/_LayoutAdmin.cshtml";
+}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="center">
+        <h3>İŞ ZAMANLA</h3>
+        <form method="post">
+
+            <div class="txt_field">
+                <input type="text" class="form-control" name="urlName" value="@Model.url.htmlVeri" required>
+                <label>İSİM</label>
+            </div>
+
+            <div class="txt_field">
+                <input type="text" class="form-control" name="urlAddress" value="@Model.url.name" required>
+                <label>VERİ</label>
+            </div>
+
+         
+        @*    <div>
+                <input type="radio" itemid="1Dakika" />
+                <label>1 Dakika</label>
+            </div>
+            <div>
+                <input type="radio" itemid="1Saat" />
+                <label>1 Saat</label>
+            </div>
+            <div>
+                <input type="radio" itemid="3Saat" />
+                <label>3 Saat</label>
+            </div>
+            <div>
+                <input type="radio" itemid="1Gün" />
+                <label>1 Gün</label>
+            </div>*@
+
+              <div class="txt_field">
+                <input type="text" class="form-control" name="isAraligi" value="@Model.isAraligi.aralik" required>
+                <label>İŞ ARALIĞI(SAAT CİNSİNDEN)</label>
+            </div>
+           
+
+            <p>                 </p>
+            <input type="submit" value="Tamam">
+
+
+        </form>
+    </div>
+
+</body>
+</html>
+
